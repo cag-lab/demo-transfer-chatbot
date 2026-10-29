@@ -1,0 +1,13 @@
+[server]
+# Only reachable from this computer. To share on your institution's network,
+# change to "0.0.0.0" ONLY after IT approves and puts it behind SSO.
+address = "localhost"
+port = 8502
+headless = false
+
+[browser]
+# Don't send anonymous usage stats to Streamlit.
+gatherUsageStats = false
+
+[client]
+toolbarMode = "minimal"

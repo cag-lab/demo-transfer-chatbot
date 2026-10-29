@@ -1,0 +1,54 @@
+# Test questions with known answers.
+# expect_source: the file the answer should come from (checks retrieval)
+# expect_in_answer: phrases that must appear in the answer (case-insensitive)
+# expect_refusal: true if the bot should say it couldn't find the answer
+#
+# When you switch to real documents, replace these with 30-50 questions
+# YOU know the answers to. This is how you know the bot is trustworthy.
+
+- question: What MEWS score should trigger a rapid response call?
+  expect_source: 04_rapid_response_escalation.md
+  expect_in_answer: ["5"]
+
+- question: How quickly must the ICU fellow see a Priority 1 consult?
+  expect_source: 01_icu_admission_criteria.md
+  expect_in_answer: ["15 minutes"]
+
+- question: Who has final say on whether a patient is admitted to the ICU?
+  expect_source: 01_icu_admission_criteria.md
+  expect_in_answer: ["ICU attending"]
+
+- question: How long does a patient need to be off pressors before they can leave the ICU?
+  expect_source: 02_icu_discharge_stepdown.md
+  expect_in_answer: ["12 hours"]
+
+- question: What handoff format is required when transferring out of the ICU?
+  expect_source: 02_icu_discharge_stepdown.md
+  expect_in_answer: ["I-PASS"]
+
+- question: Can we move patients out of the ICU at 2 am?
+  expect_source: 02_icu_discharge_stepdown.md
+  expect_in_answer: ["22:00"]
+
+- question: An outside hospital wants to send us a ventilated patient. Who do they call?
+  expect_source: 03_interfacility_transfer.md
+  expect_in_answer: ["Transfer Center"]
+
+- question: When should air transport be considered?
+  expect_source: 03_interfacility_transfer.md
+  expect_in_answer: ["60 minutes"]
+
+- question: What happens when the ICU is at orange status?
+  expect_source: 05_icu_capacity_surge.md
+  expect_in_answer: ["PACU"]
+
+- question: Who can put the hospital on ICU diversion?
+  expect_source: 05_icu_capacity_surge.md
+  expect_in_answer: ["Chief Medical Officer"]
+
+# Out-of-scope: the bot should NOT make something up.
+- question: What is the visiting hours policy for the cafeteria?
+  expect_refusal: true
+
+- question: What dose of norepinephrine should I start?
+  expect_refusal: true
